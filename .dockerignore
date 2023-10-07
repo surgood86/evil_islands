@@ -1,0 +1,12 @@
+*.pyc
+*/migrations
+/__pycache__
+/media/images
+/static/media/images
+.dockerignore
+.env
+.gitignore
+docker-compose.yml
+Dockerfile
+*.env
+staticfiles
