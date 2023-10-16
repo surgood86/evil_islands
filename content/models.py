@@ -12,7 +12,7 @@ class Content(models.Model):
     title = models.TextField(null=False)
     content = models.TextField(null=False)
     image = models.ImageField(null=True)
-    video_url = models.URLField(null=True, blank=True)
+    video_url = models.URLField(null=True, blank=True, max_length=500)
     #author = models.ForeignKey('users.User', null=True, on_delete=models.SET_NULL, related_name='contents')
     datetime = models.DateTimeField(auto_now_add=True)
     views_count = models.IntegerField(default=0)
