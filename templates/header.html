@@ -1,29 +1,95 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-
-    <button class="navbar-toggler btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand p-3 me-2" href="/">Домой</a>
-
-    <div class="collapse navbar-collapse" id="navbarContent">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'house_list' %}">Коттеджи</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#visual_1">Визуализация двух этажного дома</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#visual_2">Этапы строительства</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'house_list' %}">Готовые дома на продажу</a>
-            </li>
-        </ul>
-
-        <a class="btn btn-outline-primary" href="#">book now</a>
-    </div>
-</nav>
+        <header class="site-header container-fluid">
+            <div class="top-header">
+                <div class="logo col-md-6 col-sm-6">
+                    <h1><a href="{% url 'base' %}"><em>Art</em>Core</a></h1>
+                    <span>Responsive HTML5 Template</span>
+                </div> <!-- /.logo -->
+                <div class="social-top col-md-6 col-sm-6">
+                    <ul>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                        <li><a href="#" class="fa fa-google-plus"></a></li>
+                        <li><a href="#" class="fa fa-flickr"></a></li>
+                        <li><a href="#" class="fa fa-rss"></a></li>
+                    </ul>
+                </div> <!-- /.social-top -->
+            </div> <!-- /.top-header -->
+            <div class="main-header">
+                <div class="row">
+                    <div class="main-header-left col-md-3 col-sm-6 col-xs-8">
+                        <a id="search-icon" class="btn-left fa fa-search" href="#search-overlay"></a>
+                        <div id="search-overlay">
+                            <a href="#search-overlay" class="close-search"><i class="fa fa-times-circle"></i></a>
+                            <div class="search-form-holder">
+                                <h2>Type keywords and hit enter</h2>
+                                <form id="search-form" action="#">
+                                    <input type="search" name="s" placeholder="" autocomplete="off" />
+                                </form>
+                            </div>
+                        </div><!-- #search-overlay -->
+                        <a href="#" class="btn-left arrow-left fa fa-angle-left"></a>
+                        <a href="#" class="btn-left arrow-right fa fa-angle-right"></a>
+                    </div> <!-- /.main-header-left -->
+                    <div class="menu-wrapper col-md-9 col-sm-6 col-xs-4">
+                        <a href="#" class="toggle-menu visible-sm visible-xs"><i class="fa fa-bars"></i></a>
+                        <ul class="sf-menu hidden-xs hidden-sm">
+                            <li class="active"><a href="{% url 'base' %}">Home</a></li>
+                            <li><a href="{% url 'services' %}">Services</a></li>
+                            <li><a href="#">Projects</a>
+                                <ul>
+                                    <li><a href="{% url 'projects-2' %}">Two Columns</a></li>
+                                    <li><a href="{% url 'projects-3' %}">Three Columns</a></li>
+                                    <li><a href="{% url 'project-details' %}">Project Single</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Blog</a>
+                                <ul>
+                                    <li><a href="{% url 'blog' %}">Blog Masonry</a></li>
+                                    <li><a href="{% url 'blog-single' %}">Post Single</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Pages</a>
+                                <ul>
+                                    <li><a href="{% url 'our-team' %}">Our Team</a></li>
+                                    <li><a href="{% url 'archives' %}">Archives</a></li>
+                                    <li><a href="{% url 'grids' %}">Columns</a></li>
+                                    <li><a href="{% url '404' %}">404 Page</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div> <!-- /.menu-wrapper -->
+                </div> <!-- /.row -->
+            </div> <!-- /.main-header -->
+            <div id="responsive-menu">
+                <ul>
+                    <li><a href="{% url 'base' %}">Home</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+                    <li><a href="#">Projects</a>
+                        <ul>
+                            <li><a href="{% url 'projects-2' %}">Two Columns</a></li>
+                            <li><a href="{% url 'projects-3' %}">Three Columns</a></li>
+                            <li><a href="{% url 'project-details' %}">Project Single</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Blog</a>
+                        <ul>
+                            <li><a href="{% url 'blog' %}">Blog Masonry</a></li>
+                            <li><a href="{% url 'blog-single' %}">Post Single</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Pages</a>
+                        <ul>
+                            <li><a href="{% url 'our-team' %}">Our Team</a></li>
+                            <li><a href="{% url 'archives' %}">Archives</a></li>
+                            <li><a href="{% url 'grids' %}">Columns</a></li>
+                            <li><a href="{% url '404' %}">404 Page</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </header> <!-- /.site-header -->
