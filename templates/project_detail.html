@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block project_detail %}
+    {% for project_list in project %}
+        <div class="content-wrapper">
+
+            <div class="inner-container container">
+                <div class="row">
+                    <div class="section-header col-md-12">
+                        <h2>Мод Жамевю</h2>
+                        <span>Я своих фантазий страждущий герой</span>
+                    </div>
+                </div>
+                <div class="project-detail row">
+
+                    <div class="blog-info col-md-12">
+                        <div class="box-content">
+                            <div class="blog-content fs-5">{{ project_list.content.html|safe }}</div>
+                            <span class="blog-meta">{{ project_list.datetime }}</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

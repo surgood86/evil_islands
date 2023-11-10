@@ -5,8 +5,11 @@ import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Quick-start development settings - unsuitable for production
+# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qyg3@5+_g+7h(tlz7_)fc$u87jke)pxji+7i4z0(2_l2vnfx=r'
+SECRET_KEY = 'django-insecure-(p3qc@8d@9-%@4ei#^y6#kwc(s02b2k#hcv658j2h-_6x-gab2'
 
 # Initialise environment variables
 env = environ.Env()
@@ -25,9 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'content',
-    #'users',
+    'blog',
+    'django_quill',
 ]
 
 MIDDLEWARE = [
@@ -39,9 +42,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
-CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 ROOT_URLCONF = 'evil_islands.urls'
 
@@ -77,7 +77,6 @@ DATABASES = {
         'PORT': env('POSTGRES_PORT'),
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -124,4 +123,3 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#AUTH_USER_MODEL = 'users.User'

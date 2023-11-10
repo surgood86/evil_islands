@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block blog_detail %}
+    <div class="content-wrapper">
+
+        <div class="inner-container container">
+
+            <div class="project-detail row">
+
+                <div class="blog-info col-md-12">
+                    <div class="box-content">
+                        <div class="blog-content fs-5">{{ blog_detail.content.html|safe }}</div>
+                        <span class="blog-meta">{{ blog_detail.datetime }}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
