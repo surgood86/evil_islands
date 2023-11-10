@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block project_details %}
+    <div class="content-wrapper">
+        <div class="inner-container container">
+            {% for content in contents %}
+                <div class="project-detail row">
+                    <div class="project-slider col-md-12">
+                        {% for image in content.images.all %}
+                            <img src="{{ image.image.url }}" alt="Slide">
+                        {% endfor %}
+                        <a href="#" class="slidesjs-previous slidesjs-navigation">&lt;</a>
+                        <a href="#" class="slidesjs-next slidesjs-navigation">&gt;</a>
+                    </div>
+                    <div class="blog-info col-md-12">
+                        <div class="box-content">
+                            <h2 class="style_blog-title">{{ blog.title }}</h2>
+                            <span class="blog-meta">{{ blog.datetime }}</span>
+                            <div class="blog-content fs-5" style="line-height: 1.6;">{{ blog.content }}</div>
+                            {% if blog.blockquote %}
+                                <blockquote>{{ blog.blockquote }}</blockquote>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+        </div> <!-- /.inner-content -->
+    </div> <!-- /.content-wrapper -->
+{% endblock %}

@@ -5,18 +5,18 @@ from content.models import Content
 
 class NewsAdmin(admin.ModelAdmin):
     list_display = ['title', 'datetime']
-    list_filter = ('type',)
+    list_filter = ('category')
 
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(type='news')
+    #def get_queryset(self, request):
+    #    return super().get_queryset(request).filter(type='news')
 
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'datetime']
-    list_filter = ('type',)
+    list_filter = ('category',)
 
-    def get_queryset(self, request):
-        return super().get_queryset(request).filter(type='article')
+    #def get_queryset(self, request):
+    #    return super().get_queryset(request).filter(type='article')
 
 
 admin.site.register(Content, NewsAdmin)

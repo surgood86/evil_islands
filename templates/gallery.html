@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block gallery %}
+    <div class="content-wrapper">
+        <div class="inner-container container">
+            <div class="row">
+                <div class="section-header col-md-12">
+                    <h2>Галерея</h2>
+                    <span>Истина где-то там</span>
+                </div> <!-- /.section-header -->
+            </div> <!-- /.row -->
+            <div class="projects-holder-3">
+                <div class="filter-categories">
+                    <ul class="project-filter">
+                        <li class="filter" data-filter="all"><span>Все</span></li>
+                        {% for category in categories %}
+                            {% if category.galleries.exists %} <!-- Проверка, есть ли изображения в категории -->
+                                <li class="filter" data-filter="{{ category.name }}"><span>{{ category.name }}</span>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="projects-holder">
+                   <div class="row">
+    {% for image in gallery_list %}
+        <div class="col-md-4 project-item mix {{ image.categories.all|join:" " }}">
+            <div class="project-thumb">
+                <!-- Обертываем изображение в ссылку для увеличения -->
+                <a href="{{ image.image.url }}" class="fancybox" title="{{ image.title }}">
+                    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                    <div class="overlay-b">
+                        <div class="overlay-inner">
+                            <!-- Убираем иконку увеличения, если она теперь не нужна, так как клик будет по картинке -->
+                            <!--<i class="fa fa-expand"></i>-->
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="box-content project-detail">
+                <h2>{{ image.title }}</h2>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+                    <div class="load-more">
+                        <a href="javascript:void(0)" class="load-more">Load More</a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.inner-content -->
+    </div> <!-- /.content-wrapper -->
+{% endblock %}
