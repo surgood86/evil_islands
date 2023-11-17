@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block blog-single %}
+    <div class="content-wrapper">
+        {% for blog in blog_list %}
+            <div class="inner-container container">
+                <div class="row">
+                    <div class="blog-info col-md-12">
+                        <div class="box-content">
+                            <h2 class="blog-title">{{ blog.title }}</h2>
+                            <span class="blog-meta">{{ blog.datetime }}</span>
+                            {{ blog.content }}
+                        </div>
+                    </div>
+                    <div class="blog-tags col-md-12">
+                        <span>Теги</span>:
+                        {% for category in blog.category.all %}
+                            <a href="#">{{ category.name }}</a>
+                            {% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="comment-heading">Comments</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 comment-form">
+                        <h2 class="comment-heading">Leave a Comment</h2>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
