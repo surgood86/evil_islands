@@ -9,16 +9,19 @@
                     <span>Вот ведь и снег идет, и холодно — а все равно красиво. И на душе тепло</span>
                 </div>
             </div>
-            <div class="projects-holder">
-                <div class="row">
-                    {% for blog in blog_list %}
-                        <div class="col-md-4 project-item mix {{ blog.categories.all|join:" " }}">
-                            <div class="box-content project-detail">
-                                <a href="{% url 'blog_detail' blog.pk %}">{{ blog.content.html|safe }}</a>
-                            </div>
+             {% for blog in blog_list %}
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                    <div class="xbox_card box-shadow products-item filter-app" style="cursor: pointer;" onclick="location.href='{% url 'blog_detail' blog.pk %}';">
+                        <div class="card-title">{{ blog.content.html|safe }}</div>
+                        {% if blog.main_image %}
+                        <div class="products-img">
+                            <img src="{{ blog.main_image.url|safe  }}" loading="lazy" class="img-fluid" alt="{{ blog.content|safe  }}">
                         </div>
-                    {% endfor %}
+                        {% endif %}
+
+                    </div>
                 </div>
+            {% endfor %}
             </div>
         </div>
     </div>
